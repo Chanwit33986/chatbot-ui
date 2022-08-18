@@ -3,10 +3,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { authenStore } from "../Stores/Authen";
+import { authenStore, usernameStore } from "../Stores/Authen";
 
 function Appbar() {
   const isLogin = useRecoilValue(authenStore);
+  const userName = useRecoilValue(usernameStore);
   const setLogin = useSetRecoilState(authenStore);
   const logOut = () => {
     setLogin(false);
@@ -33,9 +34,12 @@ function Appbar() {
                 Login
               </Link>
             ) : (
-              <Nav.Link className="nav-link" onClick={logOut}>
-                Logout
-              </Nav.Link>
+              <>
+                <Nav.Link className="nav-link">{userName}</Nav.Link>
+                <Nav.Link className="nav-link" onClick={logOut}>
+                  Logout
+                </Nav.Link>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>

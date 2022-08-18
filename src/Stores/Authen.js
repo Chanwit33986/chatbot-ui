@@ -6,6 +6,11 @@ export const authenStore = atom({
   default: false,
 });
 
+export const usernameStore = atom({
+  key: "userName",
+  default: "",
+});
+
 export default function RequireAuth(props) {
   const isLogin = useRecoilValue(authenStore);
   let location = useLocation();
