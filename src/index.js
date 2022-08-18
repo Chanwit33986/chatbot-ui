@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import Layout from "./Shared/Layout";
 import Appbar from "./Components/Appbar";
+import Footer from "./Components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -16,6 +17,7 @@ root.render(
       <BrowserRouter>
         <Appbar />
         <Layout />
+        <Footer />
       </BrowserRouter>
     </RecoilRoot>
   </React.StrictMode>

@@ -39,6 +39,12 @@ export default function Login() {
     <div className="container mt-3">
       <div className="row d-flex justify-content-center">
         <div class="col-sm-6 col-12">
+          <p
+            className="text-center"
+            style={{ fontSize: "20px", fontWeight: "bold" }}
+          >
+            LOGIN CHATBOT
+          </p>
           <Form onSubmit={Login}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -61,9 +67,9 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="remember me." />
-            </Form.Group>
+            </Form.Group> */}
             <div className="d-grid gab-2">
               <Button variant="primary" type="submit">
                 Login
